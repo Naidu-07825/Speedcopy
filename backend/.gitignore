@@ -1,0 +1,23 @@
+# Node
+node_modules/
+
+# Env
+.env
+.env.local
+
+# Uploads / runtime artifacts
+uploads/
+logs/
+*.log
+npm-debug.log*
+
+# OS / editor
+.DS_Store
+.vscode/
+.idea/
+
+# Build
+dist/
+
+# Ignore local secrets or IDE settings
+*.local

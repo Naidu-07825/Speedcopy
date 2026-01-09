@@ -1,0 +1,25 @@
+
+
+.row-pending td {
+  background-color: #fff8dc !important;
+}
+
+
+.row-printing td {
+  background-color: #e6f0ff !important;
+}
+
+.row-ready td {
+  background-color: #f2e6ff !important;
+}
+
+
+.row-delivered td {
+  background-color: #e6ffe6 !important;
+}
+
+
+.row-cancelled td {
+  background-color: #ffe5e5 !important;
+  color: #8b0000;
+}
