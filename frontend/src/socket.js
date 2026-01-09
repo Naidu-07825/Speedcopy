@@ -6,21 +6,17 @@ const socketURL =
     : "http://localhost:5000";
 
 const socket = io(socketURL, {
+  path: "/socket.io", // 🔥 MUST MATCH BACKEND
   withCredentials: true,
-  transports: ["websocket"], // 🔥 REQUIRED for Render
+  transports: ["websocket"],
 });
 
-// ✅ Debug socket connection
 socket.on("connect", () => {
   console.log("🟢 Socket connected:", socket.id);
 });
 
-socket.on("disconnect", () => {
-  console.log("🔴 Socket disconnected");
-});
-
-socket.on("connect_error", (error) => {
-  console.error("❌ Socket connection error:", error.message);
+socket.on("connect_error", (err) => {
+  console.error("❌ Socket error:", err.message);
 });
 
 export default socket;
