@@ -1,6 +1,7 @@
 import { Link, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
-import NotificationBell from "../Pages/NotificationBell";
+import NotificationBell from '../pages/NotificationBell';
+
 
 export default function Navbar() {
   const navigate = useNavigate();
