@@ -7,9 +7,10 @@ const socketURL =
 
 const socket = io(socketURL, {
   withCredentials: true,
+  transports: ["websocket"], // 🔥 REQUIRED for Render
 });
 
-// Debug socket connection
+// ✅ Debug socket connection
 socket.on("connect", () => {
   console.log("🟢 Socket connected:", socket.id);
 });
@@ -19,7 +20,7 @@ socket.on("disconnect", () => {
 });
 
 socket.on("connect_error", (error) => {
-  console.error("❌ Socket connection error:", error);
+  console.error("❌ Socket connection error:", error.message);
 });
 
 export default socket;

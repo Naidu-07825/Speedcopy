@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { GoogleLogin } from "@react-oauth/google";
-import axios from "axios";
 import API from "../services/api";
 
 export default function Register() {
@@ -41,12 +40,9 @@ export default function Register() {
   
   const handleGoogleRegister = async (credentialResponse) => {
     try {
-      const res = await axios.post(
-        "http://localhost:5000/api/auth/google",
-        {
-          credential: credentialResponse.credential,
-        }
-      );
+      const res = await API.post("/auth/google", {
+  credential: credentialResponse.credential,
+});
 
       const { token, user } = res.data;
 

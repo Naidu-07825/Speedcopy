@@ -5,9 +5,7 @@ import axios from "axios";
  * - In production (Netlify): comes from VITE_API_BASE_URL
  * - In local development: falls back to localhost
  */
-const baseURL =
-  import.meta.env.VITE_API_BASE_URL ||
-  "http://localhost:5000/api";
+const baseURL = import.meta.env.VITE_API_BASE_URL + "/api";
 
 /**
  * Axios instance
