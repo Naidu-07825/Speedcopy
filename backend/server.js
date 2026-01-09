@@ -3,8 +3,16 @@
   const mongoose = require("mongoose");
   const cors = require("cors");
   const path = require("path");
+  const fs = require("fs");
   const http = require("http");
   const { Server } = require("socket.io");
+
+  // ✅ Ensure uploads directory exists (VERY IMPORTANT for Render)
+const uploadDir = path.join(__dirname, "uploads");
+if (!fs.existsSync(uploadDir)) {
+  fs.mkdirSync(uploadDir);
+  console.log("📁 uploads folder created");
+}
 
   const paymentRoutes = require("./routes/payment");
   const staffRoutes = require("./routes/staff");
